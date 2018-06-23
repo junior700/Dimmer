@@ -3,6 +3,7 @@
  *
  * Copyright (c) 2015 Circuitar
  * This software is released under the MIT license. See the attached LICENSE file for details.
+ * MODIFIED attachinterrupt, RISING TO FALLING, compatible to our hardware.
  */
 
 #include "Arduino.h"
@@ -150,7 +151,7 @@ void Dimmer::begin(uint8_t value, bool on) {
   if (!started) {
     // Start zero cross circuit if not started yet
     pinMode(DIMMER_ZERO_CROSS_PIN, INPUT);
-    attachInterrupt(DIMMER_ZERO_CROSS_INTERRUPT, callZeroCross, RISING);
+    attachInterrupt(DIMMER_ZERO_CROSS_INTERRUPT, callZeroCross, FALLING);
 
     // Setup timer to fire every 50us @ 60Hz
     TCNT(DIMMER_TIMER) = 0;                      // Clear timer
