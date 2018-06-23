@@ -3,6 +3,7 @@
  *
  * Copyright (c) 2015 Circuitar
  * This software is released under the MIT license. See the attached LICENSE file for details.
+ * Modified: DIMMER_ZERO_CROSS_PIN       3   (pin 3 to interrupt in our harware).
  */
 
 #ifndef DIMMER_H
@@ -32,7 +33,7 @@
  *
  * @see https://www.arduino.cc/en/Reference/attachInterrupt for more information.
  */
-#define DIMMER_ZERO_CROSS_PIN       2
+#define DIMMER_ZERO_CROSS_PIN       3
 #define DIMMER_ZERO_CROSS_INTERRUPT 0
 
 /**
